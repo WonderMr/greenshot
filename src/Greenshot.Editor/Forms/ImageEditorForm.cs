@@ -241,7 +241,10 @@ namespace Greenshot.Editor.Forms
                     Text = _surface.CaptureDetails.Title + " - " + Language.GetString(LangKey.editor_title);
                 }
             }
-
+            _surface.ApplyBitmapEffect(EditorConfiguration.TornEdgeEffectSettings);
+            UpdateUndoRedoSurfaceDependencies();
+            _surface.ApplyBitmapEffect(EditorConfiguration.DropShadowEffectSettings);
+            UpdateUndoRedoSurfaceDependencies();
             Activate();
             WindowDetails.ToForeground(Handle);
         }
